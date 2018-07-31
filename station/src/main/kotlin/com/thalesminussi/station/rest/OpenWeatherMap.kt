@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam
 interface OpenWeatherMap {
 
     @GetMapping
-    fun getWeatherByCity(@RequestParam q: String, @RequestParam(required = false) unit: String?, @RequestParam appid: String): WeatherResponseDto
+    fun getWeatherByCity(@RequestParam q: String, @RequestParam(required = false) units: String?, @RequestParam appid: String): WeatherResponseDto
 
 }

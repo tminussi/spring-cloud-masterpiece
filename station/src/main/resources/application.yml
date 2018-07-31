@@ -10,5 +10,4 @@ server:
 spring:
   application:
     name: station
-openWeatherApiKey: xxx
-
+openWeatherApiKey: 8f73e4ce89ff3a776a8aa45b65c87e37

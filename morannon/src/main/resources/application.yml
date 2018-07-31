@@ -7,3 +7,8 @@ server:
 spring:
   application:
     name: morannon
+zuul:
+  routes:
+    weather:
+      path: /weather**
+      serviceId: station
