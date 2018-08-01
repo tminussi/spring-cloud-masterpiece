@@ -1,6 +1,10 @@
 package com.thalesminussi.station.model
 
-class Wind {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import java.io.Serializable
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+class Wind : Serializable {
 
     var speed: Double? = null
 
