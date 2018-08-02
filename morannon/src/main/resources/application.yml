@@ -7,8 +7,23 @@ server:
 spring:
   application:
     name: morannon
+
 zuul:
   routes:
     weather:
       path: /weather**
       serviceId: station
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 100000
+        timeout:
+          enabled: false
+
+ribbon:
+  ReadTimeout: 100000
+  ConnectTimeout: 100000
