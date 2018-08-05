@@ -45,7 +45,7 @@ ext {
 }
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
 	compile('org.springframework.cloud:spring-cloud-starter-openfeign')
 	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'

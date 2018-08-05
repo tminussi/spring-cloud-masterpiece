@@ -11,7 +11,7 @@ class Main : Serializable {
 
     var humidity: Double? = null
 
-    var pressure: Integer? = null
+    var pressure: Int? = null
 
     @JsonProperty("temp_min")
     var tempMin: Double? = null

@@ -1,5 +1,4 @@
-server:
-  port: 8010
+
 spring:
   application:
     name: sherlock
@@ -7,5 +6,11 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-          defaultZone: http://localhost:8010/eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
+    response-cache-update-interval-ms: 5000
+server:
+  port: 8761
