@@ -20,8 +20,9 @@ spring:
 zuul:
   routes:
     weather:
-      path: /weather**
+      path: /weather/**
       serviceId: station
+  retryable: true
 
 hystrix:
   command:
