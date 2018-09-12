@@ -22,6 +22,9 @@ zuul:
     weather:
       path: /weather/**
       serviceId: station
+    cities:
+      path: /countries/**
+      serviceId: wallstreet
   retryable: true
 
 hystrix:

@@ -1,0 +1,16 @@
+eureka:
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+server:
+  port: 0
+spring:
+  application:
+    name: wallstreet
+restcountries:
+  url: https://restcountries.eu/rest/v2/name

@@ -1,4 +1,4 @@
-package com.thalesminussi.sherlock
+package com.thalesminussi.wallstreet
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
-class SherlockApplicationTests {
+class WallstreetApplicationTests {
 
     @Test
     fun contextLoads() {

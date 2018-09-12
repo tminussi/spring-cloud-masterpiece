@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlinVersion = '1.2.41'
+        kotlinVersion = '1.2.61'
         springBootVersion = '2.0.4.RELEASE'
     }
     repositories {
@@ -41,15 +41,12 @@ repositories {
 
 
 ext {
-    springCloudVersion = 'Finchley.RELEASE'
+    springCloudVersion = 'Finchley.SR1'
 }
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
     compile('org.springframework.cloud:spring-cloud-starter-openfeign')
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
-    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
     testCompile('org.springframework.boot:spring-boot-starter-test')
