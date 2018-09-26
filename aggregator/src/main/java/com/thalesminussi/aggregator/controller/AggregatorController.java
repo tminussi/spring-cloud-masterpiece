@@ -21,7 +21,7 @@ public class AggregatorController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Aggregator aggregate(@RequestParam String city, @RequestParam String country) {
-        return this.aggregatorService.aggregate(city, country);
+    public Aggregator aggregate(@RequestParam String city, @RequestParam(required = false) String units, @RequestParam String country) {
+        return this.aggregatorService.aggregate(city, units, country);
     }
 }

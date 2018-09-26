@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface StationClient {
 
     @GetMapping(value = "/weather", consumes = MediaType.APPLICATION_JSON_VALUE)
-    WeatherResponseDto getWeather(@RequestParam("city") String city);
+    WeatherResponseDto getWeather(@RequestParam("city") String city, @RequestParam("units") String units);
 }

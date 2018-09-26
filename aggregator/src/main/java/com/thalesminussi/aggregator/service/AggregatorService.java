@@ -24,11 +24,11 @@ public class AggregatorService {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public Aggregator aggregate(String city, String country) {
+    public Aggregator aggregate(String city, String units, String country) {
         rabbitTemplate.convertAndSend(new RequestInfo(city, country), m -> {
             m.getMessageProperties().setHeader("type", "request");
             return m;
         });
-        return new Aggregator(this.stationClient.getWeather(city), this.wallstreetClient.getCountryInfo(country));
+        return new Aggregator(this.stationClient.getWeather(city, units), this.wallstreetClient.getCountryInfo(country));
     }
 }
