@@ -25,6 +25,9 @@ zuul:
     cities:
       path: /countries/**
       serviceId: wallstreet
+    aggregator:
+      path: /aggregator/**
+      serviceId: aggregator
   retryable: true
 
 hystrix:

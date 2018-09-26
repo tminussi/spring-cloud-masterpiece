@@ -46,8 +46,18 @@ ext {
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile('org.springframework.cloud:spring-cloud-starter-zipkin')
     compile('org.springframework.cloud:spring-cloud-starter-openfeign')
     compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.0.5.RELEASE'
+
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+// https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder
+    compile group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '5.2'
+// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")

@@ -16,17 +16,9 @@ class ForecastService(val openWeatherMap: OpenWeatherMap, val redisRepository: R
 
     @HystrixCommand(fallbackMethod = "cached")
     fun getWeatherByCity(city: String, units: String?): WeatherResponseDto {
-        if (true) {
-            println("error")
-            throw RuntimeException("I want Hystrix to play its role")
-        }
-        val cachedCity = this.redisRepository.get(city)
-        if (Objects.isNull(cachedCity)) {
-            val weatherResponseDto = this.openWeatherMap.getWeatherByCity(city, units, openWeatherApiKey!!)
-            this.redisRepository.insert(city, weatherResponseDto)
-            return weatherResponseDto
-        }
-        return cachedCity!!
+        val weatherResponseDto = this.openWeatherMap.getWeatherByCity(city, units, openWeatherApiKey!!)
+        this.redisRepository.insert(city, weatherResponseDto)
+        return weatherResponseDto
     }
 
     @HystrixCommand(fallbackMethod = "cacheIsAlsoDown")
@@ -36,8 +28,7 @@ class ForecastService(val openWeatherMap: OpenWeatherMap, val redisRepository: R
     }
 
     fun cacheIsAlsoDown(city: String, units: String?): WeatherResponseDto {
-        println("Unable to fetch data")
-        return WeatherResponseDto()
+        throw RuntimeException("Does anything work here? I am working too much. Signed: Hystrix")
     }
 
 }
